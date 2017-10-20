@@ -254,6 +254,16 @@ class MainController extends Controller {
         return view('uploads', compact(['uploads']));
     }
     
+    public function deleteUploads()
+    {
+    	$uploads = Uploads::all();
+        foreach($uploads as $u)
+         {
+         	$u->delete();
+         } 
+        return redirect()->intended('/');
+    }
+    
     
     /**
 	 * Shows form to add  News.

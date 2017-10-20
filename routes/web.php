@@ -18,6 +18,7 @@ Route::get('home', 'HomeController@index');
 Route::post('apply', 'MainController@postApply');
 Route::post('contact', 'MainController@postContact');
 Route::get('uploads', 'MainController@getUploads');
+Route::get('delete-uploads', 'MainController@deleteUploads');
 Route::get('add-news', 'MainController@getAddNews');
 Route::post('add-news', 'MainController@postAddNews');
 Route::get('blog/{title?}', 'MainController@getBlog');
