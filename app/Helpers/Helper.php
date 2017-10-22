@@ -61,13 +61,17 @@ class Helper implements HelperContract
                                         "med_cert" => $u->med_cert];	
                                         
             foreach($arr as $key => $value){
-            if ($handle = opendir(public_path("documents/").$value)) {
-               /* This is the correct way to loop over the directory. */
-              while (false !== ($entry = readdir($handle))) {    $fn = $entry;          }
-           }
-           closedir($handle);
-           
-            $temp[$key] = "documents/".$value."/".$fn;
+             $final = "Not Found";
+            if(file_exists(public_path("documents/").$value)) 
+             {
+                if ($handle = opendir(public_path("documents/").$value)) {
+                  /* This is the correct way to loop over the directory. */
+                while (false !== ($entry = readdir($handle))) {    $fn = $entry;          }
+                }
+               closedir($handle);
+               $final = "documents/".$value."/".$fn;
+             } 
+            $temp[$key] = $final;
            } 
            array_push($ret, $temp);
           } 
