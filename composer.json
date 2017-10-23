@@ -48,7 +48,7 @@
             "@php artisan package:discover"
         ], 
     },
-      "post-install-cmd": [ "ln -sr storage/app/public public/storage" ],
+      
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
