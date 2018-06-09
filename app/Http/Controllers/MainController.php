@@ -181,6 +181,7 @@ class MainController extends Controller {
                 
                  else
                  {
+			 dd($req);
                  	$this->helpers->sendEmail("tysonmcrichards@gmail.com",$req['subject'],['name' => $req['name'], 'email' => $req['email'], 'subject' => $req['subject'], 'message' => $req['message']],'emails.msg','view');
                      Session::flash("contact-status", "success");
                      return redirect()->intended('/');                           
